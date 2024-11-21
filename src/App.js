@@ -1,5 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
+import SearchBar from './Components/SearchBar';
+import SearchResults from './Components/SearchResults';
+import Playlist from './Components/Playlist';
+import Tracklist from './Components/Tracklist';
+import Track from './Components/Track';
 
 function App() {
   return (
@@ -15,7 +20,7 @@ function App() {
           target="_blank"
           rel="noopener noreferrer"
         >
-          Learn React
+          Learn React Micah
         </a>
       </header>
     </div>
