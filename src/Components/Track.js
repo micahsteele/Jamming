@@ -1,20 +1,15 @@
 import React, {useState} from "react";
+import App from "../App";
 
-function Track() {
-    const [track, setTrack] = useState([
-        {
-            name: 'test',
-            artist: 'test',
-            album: 'test', 
-            id: 'test',
-        },
-        {
-            name: 'test2',
-            artist: 'test2',
-            album: 'test2', 
-            id: 'test2',
-        }
-     ])
+function Track(props) {
+    const { track } = props;
+
+    return (
+        <li>
+            <p>Name: {track.name}</p>
+            <p>{track.artist} | {track.album}</p>
+        </li>
+    )
 };
 
 export default Track;

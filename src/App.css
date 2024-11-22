@@ -25,8 +25,24 @@ main {
 }
 
 .SearchResult {
-  display: flex;
   background-color: purple;
+}
+
+.tracks {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+  align-items: center;
+}
+
+.track-button {
+  height: 25px;
+}
+
+.results {
+  display: flex;
+  margin: 5px;
 }
 
 .Playlist {
