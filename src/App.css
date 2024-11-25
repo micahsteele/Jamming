@@ -36,8 +36,13 @@ main {
   align-items: center;
 }
 
+.track {
+  display: flex;
+}
+
 .track-button {
   height: 25px;
+  align-self: center;
 }
 
 .results {

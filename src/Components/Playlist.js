@@ -4,7 +4,7 @@ import Tracklist from "./Tracklist";
 
 function Playlist(props) {
     const [playlistName, setPlaylistName] = useState('')
-    const { playlistTracks } = props;
+    const { playlistTracks, removeTrackFromPlaylist } = props;
 
     const handleTextChange = ({target}) => {
         setPlaylistName(target.value);
@@ -15,8 +15,8 @@ function Playlist(props) {
             <form className='form' >
                 <input aria-label='Enter playlist name heres' placeholder='Name of Playlist' className='playlist-name' value={playlistName} 
                 onChange={handleTextChange} />
-                <div>
-                    <Tracklist tracks={playlistTracks} />
+                <div className='playlist'>
+                    <Tracklist tracks={playlistTracks} removeTrackFromPlaylist={removeTrackFromPlaylist} remove={true} add={false} />
                 </div>
                 <input type='submit' value='Save to Spotify' />
             </form>

@@ -5,15 +5,13 @@ import Playlist from "./Playlist";
 
 function SearchResults(props) {
     const { tracks, addTrackToPlaylist } = props
-    
-    //   const addTrackToPlaylist = (props) => {
-    //     return setPlaylist((props) => [props, ...playlist]) 
-    //   }
 
     return (
         <div className='SearchResult' >
             <div className='results' >Results:</div>
-            <Tracklist tracks={tracks} addTrackToPlaylist={addTrackToPlaylist} />
+            <div className='searchResults'>
+                <Tracklist tracks={tracks} addTrackToPlaylist={addTrackToPlaylist} remove={false} add={true} />
+            </div>
         </div>
     )
 };
