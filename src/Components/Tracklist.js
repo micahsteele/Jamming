@@ -2,13 +2,14 @@ import React from "react";
 import Track from "./Track";
 
 function Tracklist(props) {
-    const { tracks } = props;
+    const { tracks, addTrackToPlaylist } = props;
 
     return (
         <ul>
             {tracks.map((track) => (
-            <div className='tracks'><Track key={track.id} track={track} className='tracks' />
-            <button aria-label='add song to playlist' className='track-button' onClick={() => console.log('hello world')} >+</button></div>
+            <div className='tracks'>
+                <Track key={track.id} track={track} className='tracks' addTrackToPlaylist={addTrackToPlaylist} />
+            </div>
             ))}
         </ul>
     )

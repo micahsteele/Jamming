@@ -4,7 +4,7 @@ import Track from "./Track";
 import Playlist from "./Playlist";
 
 function SearchResults(props) {
-    const { tracks } = props
+    const { tracks, addTrackToPlaylist } = props
     
     //   const addTrackToPlaylist = (props) => {
     //     return setPlaylist((props) => [props, ...playlist]) 
@@ -13,7 +13,7 @@ function SearchResults(props) {
     return (
         <div className='SearchResult' >
             <div className='results' >Results:</div>
-            <Tracklist tracks={tracks} />
+            <Tracklist tracks={tracks} addTrackToPlaylist={addTrackToPlaylist} />
         </div>
     )
 };
