@@ -1,34 +1,19 @@
 import React, {useState} from "react";
+import Tracklist from "./Tracklist";
 import Track from "./Track";
+import Playlist from "./Playlist";
 
-function SearchResults() {
-    const [tracks, setTracks] = useState([
-        {
-            name: 'test name',
-            artist: 'test artist',
-            album: 'test album', 
-            id: 'test id',
-        },
-        {
-            name: 'test2 name',
-            artist: 'test2 artist',
-            album: 'test2 album', 
-            id: 'test2 id',
-        }
-      ]);
+function SearchResults(props) {
+    const { tracks } = props
     
-      const addTracks = (track) => {
-        setTracks((tracks) => [track, ...tracks])
-      }
+    //   const addTrackToPlaylist = (props) => {
+    //     return setPlaylist((props) => [props, ...playlist]) 
+    //   }
 
     return (
         <div className='SearchResult' >
             <div className='results' >Results:</div>
-            <ul>
-            {tracks.map((track) => (
-              <div className='tracks'><Track key={track.id} track={track} className='tracks' /><button className='track-button' >+</button></div>
-            ))}
-          </ul>
+            <Tracklist tracks={tracks} />
         </div>
     )
 };
