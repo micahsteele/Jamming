@@ -12,7 +12,7 @@ function Track(props) {
         removeTrackFromPlaylist(track.id);
     };
 
-    const determineButton = () => {
+    const determineButtonAction = () => {
         if(remove) {
             console.log(document.getElementsByClassName('playlist'))
             return handleRemove();
@@ -24,13 +24,23 @@ function Track(props) {
         }
     };
 
+    const determineButtonSign = () => {
+        if(remove) {
+            return '-'
+        } else if(add) {
+            return '+'
+        } else {
+            console.log('not working')
+        }
+    }
+
     return (
         <li className='track' >
             <div>
                 <p>Name: {track.name}</p>
                 <p>{track.artist} | {track.album}</p>
             </div>
-            <button aria-label='add song to playlist' className='track-button' onClick={determineButton} >+</button>
+            <button aria-label='add song to playlist' className='track-button' onClick={determineButtonAction} >{determineButtonSign()}</button>
         </li>
     )
 };
