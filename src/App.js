@@ -51,6 +51,10 @@ function App() {
       playlistTracks.filter((playlistTrack) => playlistTrack.id !== trackIdToRemove))
   };
 
+  const exportPlaylist = () => {
+    const trackUris = playlistTracks.map((playlistTracks) => playlistTracks.uri)
+  };
+
   return (
     <div className="App">
       <header className="App-header">
@@ -62,7 +66,7 @@ function App() {
         <SearchBar />
         <div className='Main-body'>
           <SearchResults tracks={tracks} addTrackToPlaylist={addTrackToPlaylist} />
-          <Playlist playlistTracks={playlistTracks} removeTrackFromPlaylist={removeTrackFromPlaylist} />
+          <Playlist playlistTracks={playlistTracks} removeTrackFromPlaylist={removeTrackFromPlaylist} exportPlaylist={exportPlaylist}  />
         </div>
       </main>
     </div>
