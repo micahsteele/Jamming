@@ -14,7 +14,7 @@ function SearchBar(props) {
 
     return (
         <div className='SeachBarForm'>
-            <input aria-label='Type in a song' placeholder='Enter A Song, Artist, or Album' value={searchTerm} onChange={handleTextChange}/>
+            <input aria-label='Type in a song' className='search-input' placeholder='Enter A Song, Artist, or Album' value={searchTerm} onChange={handleTextChange}/>
             <button className='search-button' onClick={handleSubmit}>Search</button>
         </div>
     )

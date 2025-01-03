@@ -16,7 +16,7 @@
 main {
   background-color: blueviolet;
   margin: 0;
-  height: 100vh;
+  height: max-content;
 }
 
 .Main-body {
@@ -28,21 +28,33 @@ main {
   background-color: purple;
 }
 
+.search-input {
+  height: 35px;
+  width: 200px;
+}
+
 .tracks {
   list-style-type: none;
-  display: flex;
-  justify-content: space-between;
   padding: 5px;
-  align-items: center;
 }
 
 .track {
   display: flex;
+  justify-content: space-between;
+}
+
+.track-name {
+  display: flex;
+  justify-content: flex-start;
 }
 
 .track-button {
   height: 25px;
   align-self: center;
+}
+
+.track-button-div {
+  display: flex;
 }
 
 .results {

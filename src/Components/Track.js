@@ -37,10 +37,12 @@ function Track(props) {
     return (
         <li className='track' >
             <div>
-                <p>Name: {track.name}</p>
+                <p className='track-name' >Name: {track.name}</p>
                 <p>{track.artist} | {track.album}</p>
             </div>
-            <button aria-label='add song to playlist' className='track-button' onClick={determineButtonAction} >{determineButtonSign()}</button>
+            <div className='track-button-div'>
+                <button aria-label='add song to playlist' className='track-button' onClick={determineButtonAction} >{determineButtonSign()}</button>
+            </div>
         </li>
     )
 };
