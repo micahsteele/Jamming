@@ -2,19 +2,19 @@ import React, {useState} from "react";
 
 
 function SearchBar(props) {
-    const [search, setSearch] = useState('');
+    const [searchTerm, setSearchTerm] = useState('');
 
     const handleTextChange = ({target}) => {
-        setSearch(target.value);
+        setSearchTerm(target.value);
     };
 
-    const handleSubmit = (event) => {
-        props.onSearch(event)
+    const handleSubmit = () => {
+        props.onSearch(searchTerm)
     }
 
     return (
         <div className='SeachBarForm'>
-            <input aria-label='Type in a song' placeholder='Enter A Song' value={search} onChange={handleTextChange}/>
+            <input aria-label='Type in a song' placeholder='Enter A Song, Artist, or Album' value={searchTerm} onChange={handleTextChange}/>
             <button className='search-button' onClick={handleSubmit}>Search</button>
         </div>
     )

@@ -53,7 +53,7 @@ function App() {
     const trackUris = playlistTracks.map((playlistTracks) => playlistTracks.uri)
   };
 
-  const search = (term) => {
+  function search(term) {
     Spotify.search(term).then((result) => setTracks(result));
     console.log(term)
   };
