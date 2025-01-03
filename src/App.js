@@ -1,12 +1,10 @@
-import logo from './logo.svg';
-import ReactDOM from 'react-dom';
 import './App.css';
 import React, {useState} from 'react';
 import SearchBar from './Components/SearchBar';
 import SearchResults from './Components/SearchResults';
 import Playlist from './Components/Playlist';
-import Tracklist from './Components/Tracklist';
-import Track from './Components/Track';
+import {Spotify} from './Spotify';
+
 
 function App() {
   const [tracks, setTracks] = useState([
@@ -51,8 +49,13 @@ function App() {
       playlistTracks.filter((playlistTrack) => playlistTrack.id !== trackIdToRemove))
   };
 
-  const exportPlaylist = () => {
+  const savePlaylist = () => {
     const trackUris = playlistTracks.map((playlistTracks) => playlistTracks.uri)
+  };
+
+  const search = (term) => {
+    Spotify.search(term).then((result) => setTracks(result));
+    console.log(term)
   };
 
   return (
@@ -63,10 +66,10 @@ function App() {
         </h1>
       </header>
       <main>
-        <SearchBar />
+        <SearchBar onSearch={search}/>
         <div className='Main-body'>
           <SearchResults tracks={tracks} addTrackToPlaylist={addTrackToPlaylist} />
-          <Playlist playlistTracks={playlistTracks} removeTrackFromPlaylist={removeTrackFromPlaylist} exportPlaylist={exportPlaylist}  />
+          <Playlist playlistTracks={playlistTracks} removeTrackFromPlaylist={removeTrackFromPlaylist} savePlaylist={savePlaylist}  />
         </div>
       </main>
     </div>
