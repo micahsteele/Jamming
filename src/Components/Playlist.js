@@ -1,25 +1,24 @@
-import React, { useState } from "react";
+import React from "react";
 import Tracklist from "./Tracklist";
 
 
 function Playlist(props) {
-    const [playlistName, setPlaylistName] = useState('')
-    const { playlistTracks, removeTrackFromPlaylist, savePlaylist } = props;
+    const { playlistTracks, removeTrackFromPlaylist, savePlaylist, updatePlaylistName } = props;
 
     const handleTextChange = ({target}) => {
-        setPlaylistName(target.value);
+        updatePlaylistName(target.value);
+        console.log(`update Playlist name: ${target.value}`)
     };
 
     return (
         <div className='Playlist' >
-            <form className='form' onSubmit={savePlaylist} >
-                <input aria-label='Enter playlist name heres' placeholder='Name of Playlist' className='playlist-name' value={playlistName} 
-                onChange={handleTextChange} />
+            <div className='form'>
+                <input aria-label='Enter playlist name here' placeholder='Name of Playlist' className='playlist-name' onChange={handleTextChange} />
                 <div className='playlist'>
                     <Tracklist tracks={playlistTracks} removeTrackFromPlaylist={removeTrackFromPlaylist} remove={true} add={false} />
                 </div>
-                <input type='submit' value='Save to Spotify' />
-            </form>
+                <button onClick={savePlaylist}>Save to Spotify</button>
+            </div>
         </div>
     )
 };

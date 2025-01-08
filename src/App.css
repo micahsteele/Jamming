@@ -70,6 +70,7 @@ main {
 
 .form {
   padding-top: 5px;
+  padding-bottom: 15px;
 }
 
 .playlist-name {
@@ -84,15 +85,25 @@ main {
   margin-bottom: 15px;
 }
 
-main form {
-  padding-top: 50px;
-  padding-bottom: 50px;
+main {
+    min-height: 100dvh;
 }
 
 input[type='submit'],
 button {
   cursor: pointer;
   border-radius: 15px;
+}
+
+button[type=submit] {
+  cursor: pointer;
+  width: 160px;
+  padding: 5px;
+  border-radius: 55px;
+  border-width: 0px;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 15px;
 }
 
 .search-button {
